@@ -1,4 +1,4 @@
-package com.back.end.task.dcbs;
+package com.task.dcbs;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

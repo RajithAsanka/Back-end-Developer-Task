@@ -1,4 +1,4 @@
-package com.back.end.task.dcbs;
+package com.task.dcbs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
