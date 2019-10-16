@@ -1,0 +1,41 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.dummy-core-bank.com/ws"
+           targetNamespace="http://www.dummy-core-bank.com/ws" elementFormDefault="qualified">
+    <xs:element name="getAccountBalanceByAccNoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountNo" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAccountBalanceByAccNoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountInfo" type="tns:accountInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="accountInfo">
+        <xs:sequence>
+            <xs:element name="accountNo" type="xs:string"/>
+            <xs:element name="userId" type="xs:string"/>
+            <xs:element name="balance" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="getAllAccountBalanceByUserIdRequest">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="getAllAccountBalanceByUserIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="totalBalanceInfo" type="tns:totalBalanceInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="totalBalanceInfo">
+        <xs:sequence>
+            <xs:element name="userId" type="xs:string"/>
+            <xs:element name="accountDetails" type="xs:string"/>
+            <xs:element name="totalBalance" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
