@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="accountInfo" type="{http://www.dummy-core-bank.com/ws}accountInfo"/>
  *         &lt;element name="serviceStatus" type="{http://www.dummy-core-bank.com/ws}serviceStatus"/>
+ *         &lt;element name="fundTransferInfo" type="{http://www.dummy-core-bank.com/ws}fundTransferInfo"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,40 +37,16 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "accountInfo",
-    "serviceStatus"
+    "serviceStatus",
+    "fundTransferInfo"
 })
-@XmlRootElement(name = "getAccountBalanceByAccNoResponse")
-public class GetAccountBalanceByAccNoResponse {
+@XmlRootElement(name = "fundTransferResponse")
+public class FundTransferResponse {
 
-    @XmlElement(required = true)
-    protected AccountInfo accountInfo;
     @XmlElement(required = true)
     protected ServiceStatus serviceStatus;
-
-    /**
-     * Gets the value of the accountInfo property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link AccountInfo }
-     *     
-     */
-    public AccountInfo getAccountInfo() {
-        return accountInfo;
-    }
-
-    /**
-     * Sets the value of the accountInfo property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AccountInfo }
-     *     
-     */
-    public void setAccountInfo(AccountInfo value) {
-        this.accountInfo = value;
-    }
+    @XmlElement(required = true)
+    protected FundTransferInfo fundTransferInfo;
 
     /**
      * Gets the value of the serviceStatus property.
@@ -94,6 +70,30 @@ public class GetAccountBalanceByAccNoResponse {
      */
     public void setServiceStatus(ServiceStatus value) {
         this.serviceStatus = value;
+    }
+
+    /**
+     * Gets the value of the fundTransferInfo property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FundTransferInfo }
+     *     
+     */
+    public FundTransferInfo getFundTransferInfo() {
+        return fundTransferInfo;
+    }
+
+    /**
+     * Sets the value of the fundTransferInfo property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FundTransferInfo }
+     *     
+     */
+    public void setFundTransferInfo(FundTransferInfo value) {
+        this.fundTransferInfo = value;
     }
 
 }

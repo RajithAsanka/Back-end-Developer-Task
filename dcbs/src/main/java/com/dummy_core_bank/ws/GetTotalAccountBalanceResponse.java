@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="accountInfo" type="{http://www.dummy-core-bank.com/ws}accountInfo"/>
+ *         &lt;element name="totalUserAccountBalanceInfo" type="{http://www.dummy-core-bank.com/ws}totalUserAccountBalanceInfo"/>
  *         &lt;element name="serviceStatus" type="{http://www.dummy-core-bank.com/ws}serviceStatus"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -37,39 +37,39 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "accountInfo",
+    "totalUserAccountBalanceInfo",
     "serviceStatus"
 })
-@XmlRootElement(name = "getAccountBalanceByAccNoResponse")
-public class GetAccountBalanceByAccNoResponse {
+@XmlRootElement(name = "getTotalAccountBalanceResponse")
+public class GetTotalAccountBalanceResponse {
 
     @XmlElement(required = true)
-    protected AccountInfo accountInfo;
+    protected TotalUserAccountBalanceInfo totalUserAccountBalanceInfo;
     @XmlElement(required = true)
     protected ServiceStatus serviceStatus;
 
     /**
-     * Gets the value of the accountInfo property.
+     * Gets the value of the totalUserAccountBalanceInfo property.
      * 
      * @return
      *     possible object is
-     *     {@link AccountInfo }
+     *     {@link TotalUserAccountBalanceInfo }
      *     
      */
-    public AccountInfo getAccountInfo() {
-        return accountInfo;
+    public TotalUserAccountBalanceInfo getTotalUserAccountBalanceInfo() {
+        return totalUserAccountBalanceInfo;
     }
 
     /**
-     * Sets the value of the accountInfo property.
+     * Sets the value of the totalUserAccountBalanceInfo property.
      * 
      * @param value
      *     allowed object is
-     *     {@link AccountInfo }
+     *     {@link TotalUserAccountBalanceInfo }
      *     
      */
-    public void setAccountInfo(AccountInfo value) {
-        this.accountInfo = value;
+    public void setTotalUserAccountBalanceInfo(TotalUserAccountBalanceInfo value) {
+        this.totalUserAccountBalanceInfo = value;
     }
 
     /**

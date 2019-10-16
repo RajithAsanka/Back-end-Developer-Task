@@ -8,26 +8,26 @@
 
 package com.dummy_core_bank.ws;
 
-import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for accountInfo complex type.
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="accountInfo">
+ * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="accountNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="balance" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
+ *         &lt;element name="fundTransferType" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="fromAccountNO" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="toAccountNO" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,90 +37,91 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "accountInfo", propOrder = {
-    "accountNo",
-    "userId",
-    "balance"
+@XmlType(name = "", propOrder = {
+    "fundTransferType",
+    "fromAccountNO",
+    "toAccountNO"
 })
-public class AccountInfo {
+@XmlRootElement(name = "fundTransferRequest")
+public class FundTransferRequest {
 
     @XmlElement(required = true)
-    protected String accountNo;
+    protected String fundTransferType;
     @XmlElement(required = true)
-    protected String userId;
+    protected String fromAccountNO;
     @XmlElement(required = true)
-    protected BigDecimal balance;
+    protected String toAccountNO;
 
     /**
-     * Gets the value of the accountNo property.
+     * Gets the value of the fundTransferType property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAccountNo() {
-        return accountNo;
+    public String getFundTransferType() {
+        return fundTransferType;
     }
 
     /**
-     * Sets the value of the accountNo property.
+     * Sets the value of the fundTransferType property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAccountNo(String value) {
-        this.accountNo = value;
+    public void setFundTransferType(String value) {
+        this.fundTransferType = value;
     }
 
     /**
-     * Gets the value of the userId property.
+     * Gets the value of the fromAccountNO property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getUserId() {
-        return userId;
+    public String getFromAccountNO() {
+        return fromAccountNO;
     }
 
     /**
-     * Sets the value of the userId property.
+     * Sets the value of the fromAccountNO property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setUserId(String value) {
-        this.userId = value;
+    public void setFromAccountNO(String value) {
+        this.fromAccountNO = value;
     }
 
     /**
-     * Gets the value of the balance property.
+     * Gets the value of the toAccountNO property.
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link String }
      *     
      */
-    public BigDecimal getBalance() {
-        return balance;
+    public String getToAccountNO() {
+        return toAccountNO;
     }
 
     /**
-     * Sets the value of the balance property.
+     * Sets the value of the toAccountNO property.
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link String }
      *     
      */
-    public void setBalance(BigDecimal value) {
-        this.balance = value;
+    public void setToAccountNO(String value) {
+        this.toAccountNO = value;
     }
 
 }
