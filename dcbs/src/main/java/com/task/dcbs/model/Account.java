@@ -1,4 +1,4 @@
-package com.model;
+package com.task.dcbs.model;
 
 import lombok.Getter;
 import lombok.Setter;
