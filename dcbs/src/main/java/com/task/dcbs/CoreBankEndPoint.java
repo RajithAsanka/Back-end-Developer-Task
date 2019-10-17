@@ -1,6 +1,8 @@
 package com.task.dcbs;
 
 import com.dummy_core_bank.ws.*;
+import com.task.dcbs.service.DummyCoreBankService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -9,24 +11,28 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import java.math.BigDecimal;
 
 @Endpoint
+@RequiredArgsConstructor
 public class CoreBankEndPoint {
 
     private static final String CORE_BANK_NAMESPACE_URI = "http://www.dummy-core-bank.com/ws";
+    private final DummyCoreBankService coreBankService;
 
+
+    @PayloadRoot(namespace = CORE_BANK_NAMESPACE_URI, localPart = "getAccountBalanceByAccNoRequest")
+    @ResponsePayload
+    public GetAccountBalanceByAccNoResponse processAccountBalanceByAccNoRequest(@RequestPayload GetAccountBalanceByAccNoRequest request) {
+
+        return coreBankService.getAccountBalanceByAccountNo(request.getAccountNo());
+
+    }
 
     @PayloadRoot(namespace = CORE_BANK_NAMESPACE_URI, localPart = "getTotalAccountBalanceRequest")
     @ResponsePayload
     public GetTotalAccountBalanceResponse processTotalAccountBalanceRequest(@RequestPayload GetTotalAccountBalanceRequest request) {
         GetTotalAccountBalanceResponse response = new GetTotalAccountBalanceResponse();
 
-        TotalUserAccountBalanceInfo userAccountBalanceInfo = new TotalUserAccountBalanceInfo();
+        return coreBankService.getTotalAccountBalance(request.getUserId());
 
-        userAccountBalanceInfo.setUserId("111");
-        userAccountBalanceInfo.setAccountDetails("123123,4546456");
-        userAccountBalanceInfo.setTotalBalanceForUser(BigDecimal.valueOf(1000.00));
-        response.setTotalUserAccountBalanceInfo(userAccountBalanceInfo);
-
-        return response;
     }
 
     @PayloadRoot(namespace = CORE_BANK_NAMESPACE_URI, localPart = "fundTransferRequest")

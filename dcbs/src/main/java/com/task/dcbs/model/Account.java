@@ -11,11 +11,11 @@ import java.math.BigDecimal;
 @Entity
 @Getter
 @Setter
-public class AccountDetailEntity {
+public class Account {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Long accountId;
 
     private String userId;
 

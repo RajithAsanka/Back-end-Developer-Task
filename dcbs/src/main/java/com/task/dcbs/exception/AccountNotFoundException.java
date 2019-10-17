@@ -1,4 +1,4 @@
-package com.exception;
+package com.task.dcbs.exception;
 
 public class AccountNotFoundException extends Exception {
 

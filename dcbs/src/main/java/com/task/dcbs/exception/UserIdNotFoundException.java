@@ -1,4 +1,4 @@
-package com.exception;
+package com.task.dcbs.exception;
 
 public class UserIdNotFoundException extends Exception {
 

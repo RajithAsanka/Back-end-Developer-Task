@@ -1,6 +1,6 @@
 package com.task.dcbs.common;
 
-public enum ServiceStatus {
+public enum Status {
 
     SUCCESS, FAILED
 }
