@@ -54,8 +54,10 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="fundTransferType" type="xs:string"/>
+                <xs:element name="userId" type="xs:string"/>
                 <xs:element name="fromAccountNO" type="xs:string"/>
                 <xs:element name="toAccountNO" type="xs:string"/>
+                <xs:element name="amount" type="xs:decimal"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

@@ -1,16 +1,20 @@
 package com.task.dcbs.repository;
 
-import com.task.dcbs.model.Account;
+import com.task.dcbs.model.AccountEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Developed by Rajith Asanka - 901833109V
+ */
+
 @Repository
-public interface AccountDetailsRepository extends JpaRepository<Account, Long> {
+public interface AccountDetailsRepository extends JpaRepository<AccountEntity, Long> {
 
-    Account findByAccountNo(String accountNo);
+    AccountEntity findByAccountNo(String accountNo);
 
-    List<Account> findByUserId(String userId);
+    List<AccountEntity> findByUserId(String userId);
 
 }

@@ -8,10 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 
-@Entity
+/**
+ * Developed by Rajith Asanka - 901833109V
+ */
+
+@Entity(name = "account")
 @Getter
 @Setter
-public class Account {
+public class AccountEntity {
 
     @Id
     @GeneratedValue
